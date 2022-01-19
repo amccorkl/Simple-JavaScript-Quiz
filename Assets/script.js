@@ -1,33 +1,33 @@
 // create variables
 // timers
-let time = document.getElementsByClassName("time")
-let timer = document.getElementById("timer")
-const timeUp = document.getElementById("time-up")
+let time = document.querySelectorAll("#time")
+let timeLeft = document.querySelectorAll("#timer")
+const timeUp = document.querySelectorAll("#time-up")
 let totalTime = 60
 
 
 // start screen
-const startScreen = document.getElementById("start-screen")
-const startQuizBtn = document.getElementById("start-button")
+const startScreen = document.querySelectorAll("#start-screen")
+const startQuizBtn = document.querySelectorAll("#start-button")
 
 // questions
-const questionsScreen = document.getElementById("qeustions-screen")
-const questions = document.getElementById("questions")
-const ansBtn1 = document.getElementById("btn1") 
-const ansBtn2 = document.getElementById("btn2") 
-const ansBtn3 = document.getElementById("btn3") 
-const ansBtn4 = document.getElementById("btn4")
+const questionsScreen = document.querySelectorAll("#questions-screen")
+const questions = document.querySelectorAll("#questions")
+const ansBtn1 = document.querySelectorAll("#btn1") 
+const ansBtn2 = document.querySelectorAll("#btn2") 
+const ansBtn3 = document.querySelectorAll("#btn3") 
+const ansBtn4 = document.querySelectorAll("#btn4")
  
 //answerCheck
-const answerCheck = document.getElementById("answer-check")
+const answerCheck = document.querySelectorAll("#answer-check")
 let currentQuestion = 0
 
 
 // summary screen
-const summaryScreen = document.getElementById("final-score")
-const initials = document.getElementById("initials")
-const submitBtn = document.getElementById("submit-button")
-const clearScores = document.getElementById("clear-scores-btn")
+const summaryScreen = document.querySelectorAll("#final-score")
+const initials = document.querySelectorAll("#initials")
+const submitBtn = document.querySelectorAll("#submit-button")
+const clearScores = document.querySelectorAll("#clear-scores-btn")
 
 
 // high score screen
@@ -93,7 +93,7 @@ function startTimer() {
         }
     }, 1000);
 }
-// console.log("questions(questionsArray].questions");
+console.log("questions(questionsArray].questions");
 
 
     // call startQuiz to work

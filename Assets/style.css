@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: bisque;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.scores {
+    justify-content: flex-start;
+}
+
+.time {
+    justify-content: flex-end;
+    float: right;
+    padding: 5px;
+    margin-top: -30px;
+}
+#time-up {
+    display: none;
+}
+
+.main-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+button:hover {
+    border-radius: 5px;
+    background-color: rgb(100, 67, 219);
+
+}
+/* this isn't doing anything yet */
+#start-screen {
+    display: block; 
+    flex-wrap: wrap;
+
+}
+
+/* hide these screen until called by click events */
+#questions-screen,
+.summary-screen,
+.score-check {
+    display: none;
+}
+
+/* remove bullets */
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    cursor: pointer;
+}
+

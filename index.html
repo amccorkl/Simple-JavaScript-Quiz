@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/style.css">
+    <title>Quiz App</title>
+</head>
+
+<body>
+    <!-- header container -->
+    <header class="header-container">
+        <!-- nav bar for to view scores and timer -->
+        <!-- <div class="nav-row"> -->
+            <div class="scores">
+                <button id="high-scores" type="button">View High Scores</button>
+            </div>
+            
+            <div class="time">
+               <p id="timer"><span>Timer: 60 seconds</span></p>
+            </div>
+            <div>
+                <p id="time-up" style="display: none;"><span>Time's Up!</span></p>
+            </div>
+        <!-- </div> -->
+    </header>
+    
+    <!-- directions, questions, answers -->
+    <main class="main-container">
+        
+        <!-- start screen -->
+        <section id="start-screen">
+            <h1>Quiz on Introductory Level Fullstack Design</h1>
+            <p class="introduction">This 4 question quiz asks introductory questions about HTML, CSS, and Javascript. It is timed. Incorrect answers will be penalized with a 10sec time loss.</p>
+            <button class="game-buttons" id="start-button" type="button" >Start Quiz</button>
+        </section>
+
+        <!-- question and answer options screen -->
+        <section id="questions-screen">
+            <h2 class="titles" id="questions">Questions</h2>
+            <ul class="answer-options">
+                <li class="answer1"><button id="btn1">Answer One</button></li>
+                <li class="answer1"><button id="btn2">Answer Two</button></li>
+                <li class="answer1"><button id="btn3">Answer Three</button></li>
+                <li class="answer1"><button id="btn4">Answer Four</button></li>
+            </ul>
+            <p id="answer-check"></p>
+
+        </section>
+
+        <!-- does this need to be within the prior section? -->
+
+        <!-- summary screen -->
+        <section class="summary-screen" id="final-score">
+            <h2 class="titles">Your Final Score</h2>
+            <!-- should i do a form here? -->
+            <p>Enter Initials: <span><input type="text" id="initials" placeholder="Enter Your Initials"></span> 
+            <button class="game-buttons" id="submit-button" type="submit">Submit</button>
+            </p>
+        </section>
+
+        <!-- high score screen -->
+        <section class="score-check">
+            <!-- created but not displaying until called -->
+            <h2 class="titles" ></h2>
+            <p>
+            <!-- not required as part of the project but maybe make the link actionable at some point -->
+
+            <!-- append all scores here -->
+
+            </p
+            id="high-scores" style="display: none;">
+
+            <p>
+                <button type="submit" class="btn" id="submit">Submit</button>;
+                <button type="submit" class="btn" id="clear-scores-btn">Clear Scores</button>;
+            </p>
+        </section>
+    </main>
+</body>
+</html> 

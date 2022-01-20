@@ -19,7 +19,7 @@ body {
     justify-content: flex-end;
     float: right;
     padding: 5px;
-    margin-top: -30px;
+    margin-top: -40px;
 }
 #time-up {
     display: none;
@@ -31,6 +31,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    border: 2px black;
 }
 
 h1 {
@@ -44,13 +45,14 @@ button:hover {
 }
 /* this isn't doing anything yet */
 #start-screen {
-    display: block; 
     flex-wrap: wrap;
 
 }
+.hide {
+    display: none;
+}
 
 /* hide these screen until called by click events */
-#questions-screen,
 .summary-screen,
 .score-check {
     display: none;

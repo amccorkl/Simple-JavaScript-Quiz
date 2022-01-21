@@ -11,17 +11,16 @@
 <body>
     <!-- header container -->
     <header class="header-container">
-        <!-- nav bar for to view scores and timer -->
-        <!-- <div class="nav-row"> -->
+        <!-- nav bar to view scores and timer -->
             <div class="scores">
                 <button id="high-scores" type="button">View High Scores</button>
             </div>
             
             <div class="time">
-               <p id="timer"><span>Timer: 60 seconds</span></p>
+               <p id="timer">Timer: 60 seconds</p>
             </div>
             <div>
-                <p id="time-up" style="display: none;"><span>Time's Up!</span></p>
+                <p id="time-up" class="hide">Time's Up!</p>
             </div>
         <!-- </div> -->
     </header>
@@ -31,14 +30,14 @@
         
         <!-- start screen -->
         <section id="start-screen">
-            <h1>Quiz on Introductory Level Fullstack Design</h1>
-            <p class="introduction">This 4 question quiz asks introductory questions about HTML, CSS, and Javascript. It is timed. Incorrect answers will be penalized with a 10sec time loss.</p>
-            <button class="game-buttons"  id="start-button" type="button" >Start Quiz</button>
+            <h1>Short Simple Quiz</h1>
+            <p class="introduction"><h2>This 4 question quiz asks introductory questions about HTML, CSS, and Javascript. It is timed. Incorrect answers will be penalized with a 10sec time loss.</h2></p>
+            <button class="btn"  id="start-button" type="button" >Start Quiz</button>
         </section>
 
         <!-- question and answer options screen -->
         <section id="questions-screen" class="hide">
-            <h2 class="titles" id="questions">Question:</h2>
+            <h1 class="titles" id="questions"></h1>
             <ul class="answer-options">
             </ul>
             
@@ -48,31 +47,30 @@
         <!-- does this need to be within the prior section? -->
 
         <!-- summary screen -->
-        <section class="summary-screen" id="final-score">
-            <h2 class="titles">Your Final Score</h2>
+        <section id="summary-screen" class="hide" 
+        >
+            <h1 class="titles">Your Final Score</h1>
             <!-- should i do a form here? -->
             <p>Enter Initials: <span><input type="text" id="initials" placeholder="Enter Your Initials"></span> 
-            <button class="game-buttons" id="submit-button" type="submit">Submit</button>
+            <button class="btn" id="submit-button" type="submit">Submit</button>
             </p>
         </section>
 
         <!-- high score screen -->
-        <section class="score-check">
+        <section id="score-check" class="hide">
             <!-- created but not displaying until called -->
             <h2 class="titles" ></h2>
-            <p>
-            <!-- not required as part of the project but maybe make the link actionable at some point -->
 
+            <p id="high-scores">
             <!-- append all scores here -->
-
-            </p
-            id="high-scores" style="display: none;">
+            </p>
 
             <p>
                 <button type="submit" class="btn" id="submit">Submit</button>;
                 <button type="submit" class="btn" id="clear-scores-btn">Clear Scores</button>;
             </p>
         </section>
+      
     </main>
     <script src="./Assets/script.js"></script>
 </body>

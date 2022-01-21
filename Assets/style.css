@@ -1,60 +1,88 @@
 * {
     box-sizing: border-box;
+   
+
 }
 body {
     background-color: bisque;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 10px;
     margin: 5px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    height: 100vh;
  
 }
-
-.scores {
-    justify-content: flex-start;
-}
-
-.time {
-    justify-content: flex-end;
-    float: right;
-    padding: 5px;
-    margin-top: -40px;
-}
-#time-up {
-    display: none;
-}
-
 .main-container {
     height: 100vh;
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    border: 2px black;
+    text-align: center;
+    background-color: rgb(154, 154, 165);
+    border: 2px solid black;
+    padding: 50px;
+    margin: 50px;
 }
+
+/* header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background-color: brown;
+    padding: 20px 20px 20px 0;
+} */
+
+ .scores {
+    justify-content: flex-start;
+}
+
+.time {
+    font-size: 25px;
+    justify-content: flex-end;
+    float: right;
+    padding-left: 20px; 
+} 
+
+/* #time-up {
+    display: none;
+} */
 
 h1 {
     font-size: 50px;
 }
 
-button:hover {
-    border-radius: 5px;
-    background-color: rgb(100, 67, 219);
-
-}
-/* this isn't doing anything yet */
 #start-screen {
     flex-wrap: wrap;
+    border: 2px black solid;
+    width: 100%;
+    padding: 10px;
+    height: auto;
+    margin-top: 0;
 
 }
+
+#questions-screen {
+    flex-wrap: wrap;
+    border: 2px black solid;
+    padding: 10px;
+    margin: 0;
+}
+
+#summary-screen {
+    flex-wrap: wrap;
+    border: 2px black solid;
+    padding: 10px;
+}
+
+#score-check {
+    flex-wrap: wrap;
+    border: 2px black solid;
+    padding: 10px;
+}
+
 .hide {
-    display: none;
-}
-
-/* hide these screen until called by click events */
-.summary-screen,
-.score-check {
     display: none;
 }
 
@@ -63,7 +91,26 @@ ul {
     list-style-type: none;
 }
 
-ul li {
-    cursor: pointer;
+
+
+button {
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 8px;
 }
 
+button:hover {
+    background-color: rgb(219, 67, 92);
+    /* cursor: pointer; */
+
+}
+
+/* media screen for smaller devices to make more responsive */
+@media screen  and (max-width: 460px) {
+    h1 {
+        font-size: 2em;
+    }
+    button {
+        font-size: 2em;
+    }
+}

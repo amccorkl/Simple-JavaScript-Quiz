@@ -1,7 +1,7 @@
 // create variables
 // timers
-let time = document.getElementById("time")
-let timeLeft = document.getElementById("timer")
+let timeEl = document.getElementById("time")
+let secLeft = document.getElementById("timer")
 const timeUp = document.getElementById("time-up")
 let totalTime = 60
 
@@ -21,14 +21,15 @@ let currentQuestion = 0
 
 
 // summary screen
-const summaryScreen = document.getElementById("final-score")
+const summaryScreen = document.getElementById("sumary-screen") 
+// let finalScore = document.getElementById("final-score")
 const initials = document.getElementById("initials")
 const submitBtn = document.getElementById("submit-button")
 const clearScores = document.getElementById("clear-scores-btn")
 
 
 // high score screen
-// const highScoreCheck = document.getElementsByClassName("score-check")
+// const highScoreCheck = document.getElementsById("score-check")
 // let scoreList = document.getElementById("high-scores")
 // const goBackBtn = document.getElementById("go-back-btn")
 // const clearnBtn = document.getElementById("clear-scores-btn")
@@ -65,21 +66,38 @@ let questions = [
     }
 ];
 
-// functions
 
-// // initialize/start the quiz
-// // start quiz
+// functions
+// initialize/start the quiz
 function startQuiz () { 
     questionIndex = 0;
+    // startTimer();
     totalTime = 60;
-    timeLeft.textContent = totalTime;
+    secLeft.textContent = "Time: ", + totalTime;
     startScreen.setAttribute("class", "hide");
     questionsScreen.removeAttribute("class");
     callQuestion();
 
 }
+
 startQuizBtn.addEventListener("click", startQuiz);
 
+// function startTimer () {
+//     timeEl.textContent = secLeft;
+//     let timerInterval = setInterval(function() {
+//         secLeft--;
+//         timeEl.textContent = secLeft;
+//         //check timer value for less than 0
+//         if (secLeft <= 0) {
+//             clearInterval(timerInterval);
+//         }
+//         if (questionIndex < questions.length -1) { 
+//             gameOver();
+//         }
+//     }, 1000);
+// }
+
+// questions screen
 function callQuestion(){
     // console.log(questionIndex);
     questionsEl.textContent = questions[questionIndex].question;
@@ -92,102 +110,52 @@ function callQuestion(){
         button.onclick = checkAnswer;
         
     answerOptions.appendChild(button);
-    
+
     })
 }
+
 function checkAnswer (event) {
     var userAnswer = event.target.getAttribute("data-answer");
     // console.log(userAnswer);
     if (userAnswer !== questions[questionIndex].correctAnswer){
+    //    console.log("wrong"); 
        wrongLogic();
     } else {
-        console.log("correct");
+        // console.log("correct");
         correctLogic();
     }
     questionIndex++;
     if (questionIndex === questions.length) {
-        console.log("end game");
+        // console.log("end game");
     } else {
         callQuestion();
     }
-    
-
 }
+
+
 function wrongLogic() {
     //need current time
-    console.log(time)
-    // remove 10 secs from time
-    //check timer value for less than 0
+    console.log(timeEl)
+
 }
-function correctLogic() {
-    console.log(scoreResult);
-}
- // // timer 
-// function startTimer() {
-//     let timeInterval = setInterval(function() {
-//         totalTime--;
-//         timeLeft.textContent = totalTime;
-
-//         if (totalTime <= 0) {
-//             clearInterval(timeInterval);
-//             // questions.style.display: none;
-//             // final score. style.display: block;
-//             if (questionIndex < questions.length -1) {
-//                 gameOver();
-//             }
-//         }
-//     }, 1000);
-// }
-// console.log("questions(questionsArray].questions");
-
-
-//     // call startQuiz to work
-//     startTimer ();
-//     questionIndex(questions);
     
 
-// // create function to have questions appear and get user answer
-// function questionOrder (array) {
-//     if (questionIndex < questions.length) {
-//         questionsScreen.textContent = questions[array].questions;
-//         ansBtn1.textContent = questions[array].answers[0];
-//         ansBtn2.textContent = questions[array].answers[1];
-//         ansBtn3.textContent = questions[array].answers[2];
-//         ansBtn4.textContent = questions[array].answers[3];
-//     }
-// }
+function correctLogic() {
+    console.log(scoreResult);
+    
+}
 
-// // function to check answers and move to the next one
-// function correctAnswer (event) {
-//     event.preventDefault();
 
-//     if (questions[questionIndex].answerCheck === event.target.value) {
-//         answerCheck.textContent = "Correct";
-//         correctAnswer++;
-//     } else (questions[questionNum].answerCheck !== event.target.value){
-//         answerCheck.textContent = "Incorrect";
-//         totalTime -= 10;
-//         timeLeft.textContent = totalTime;   
-//     }
-
-//     // move to the next question
-//     if (questionIndex < questions.length) {
-//         questionIndex++;
-//     } else {
-//         // all questions answered end game
-//         gameOver();
-//     }
-
-//     // call the questions function against the correct answer 
-//     questionOrder(questions);
-// }
 
 // // game over function
-// function gameOver()
-//     scoreResult.textContent = correctAnswer;
+function gameOver() {
+    scoreResult.textContent = correctAnswer;
+    
+}
 
 
-// // function to set user info and store in local storage
+
+// function to set user info and store in local storage
 // function getUserInfo (event) {
 //     event.preventDefault();
 //     if (initials.value === "") {
@@ -219,4 +187,4 @@ function correctLogic() {
 // });
 
 // // clearScores.addEventListener("click", function(event) {   clearScores(event); 
-// // });
+// // })
